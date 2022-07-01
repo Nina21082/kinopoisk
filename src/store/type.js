@@ -1,3 +1,7 @@
 export const SHOW_FILMS = 'SHOW_FILMS'
 export const ERROR_FILMS = 'ERROR_FILMS'
 export const LOADING_FILMS = 'LOADING_FILMS'
+export const SHOW_DATA = 'SHOW_DATA'
+export const SEARCH_FILMS = 'SEARCH_FILMS'
+export const SEARCH_ERROR = 'SEARCH_ERROR'
+export const SEARCH_LOADING = 'SEARCH_LOADING'

@@ -1,17 +1,17 @@
-import { SHOW_FILMS, ERROR_FILMS, LOADING_FILMS } from "../type"
+import {SHOW_FILMS, ERROR_FILMS, LOADING_FILMS, SHOW_DATA, SEARCH_FILMS} from "../type"
 
 const initialState={
     films: [],
     loading: null,
-    error: null
+    error: null,
+    data: []
 }
-
 export const filmListReducer = (state = initialState, action) => {
     switch(action.type){
         case SHOW_FILMS : {
-            console.log(action)
             return{
                 ...state,
+
                 films: action.payload,
                 loading: false
             }
@@ -25,9 +25,24 @@ export const filmListReducer = (state = initialState, action) => {
         } case LOADING_FILMS:{
             return{
                  ...state, 
-               loading: true,
+               loading: action.payload,
                error: null
             }       
+        }
+        case SHOW_DATA:{
+            return{
+                 ...state,
+                 data: action.payload,
+                loading: false,
+                error: null
+            }
+        } case SEARCH_FILMS: {
+            return{
+                ...state,
+                films: action.payload,
+                error: null,
+                loading: false
+            }
         }
         default: return state
     }
