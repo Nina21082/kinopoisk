@@ -17,7 +17,6 @@ export const filmListAction = (page) => async (dispatch) => {
                 </div>
         })
         const response = await http.get(`/v2.2/films?order=RATING&type=ALL&ratingFrom=0&ratingTo=10&yearFrom=1000&yearTo=3000&page=${page}`)
-        console.log(response.data)
         dispatch({
             type: SHOW_FILMS,
             payload: response.data.items

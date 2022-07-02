@@ -18,7 +18,7 @@ export function FilmList() {
     const [searchTimeout, setSearchTimeout] = useState();
 
 
-    console.log(searchError);
+
 
 
     useEffect(() => {

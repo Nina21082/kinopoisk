@@ -9,14 +9,12 @@ export const searchAction = (params) => async (dispatch) =>{
             payload: true
         })
         const resp = await  http.get(`/v2.1/films/search-by-keyword?keyword=${params.keyword}&page=${params.page}`)
-        console.log(resp.data.films)
         dispatch({
             type: SEARCH_FILMS,
             payload: resp.data.films
         })
     }catch(error){
         if (error.message) {
-            console.log(error.message)
             dispatch({
                 type: SEARCH_ERROR,
                 payload: error.message
