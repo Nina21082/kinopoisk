@@ -32,6 +32,7 @@ export function FilmList() {
 
     const handleChange = (event) => {
         setValue(event.target.value);
+        console.log(111);
             if (event.target.value) {
                 clearTimeout(searchTimeout);
                 let timeout = setTimeout(() => {
@@ -106,7 +107,7 @@ export function FilmList() {
                 </div>
                 <div className="flex flex-row flex-wrap p-8 grid grid-cols-4 gap-4 bg-indigo-200">
                     {films && films.length ? films.map((item, index) => (
-                        <div key={index}>
+                        <div key={index} className='item'>
                             <img src={item.posterUrlPreview} className="w-64  h-80 rounded-lg" alt=""/>
                             <p className="font-sans ...">{item.nameOriginal || item.nameRu || item.nameEn}</p>
                         </div>
@@ -114,7 +115,7 @@ export function FilmList() {
                         <div>No Result</div>
                     }
                 </div>
-                < Pagination
+                <Pagination
                     pageCount={data.totalPages}
                     handleClickPagination={(page) => handleClickPagination(page)}/>
             </div>
